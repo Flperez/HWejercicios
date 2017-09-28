@@ -3,7 +3,7 @@
 # Lista de ejercicios
 
 ## Ejercicio 1:
-Desarrollar un módulo de aumentado de datos para redes de convolución en
+### Desarrollar un módulo de aumentado de datos para redes de convolución en
 python
 
 1. Descargar subconjunto de imágenes de ImageNet
@@ -21,7 +21,7 @@ de salida.
 
 
 ## Ejercicio 2
-Embrión para un sistema de seguimiento visual por color en python
+### Embrión para un sistema de seguimiento visual por color en python
 
 Objetivo: encontrar regiones candidatas a objeto
 
@@ -39,6 +39,12 @@ Pasos a seguir:
 
 ## Ejercicio 3
 
+
 ## Ejercicio 4
 
 ## Ejercicio 5
+### Detector de peatones:
+1. Debemos cargar un video de entrada (video_in)
+2. Obtener los frames
+3. Aplicar el detector de peatones de HOG
+4. Pintar con un rectángulo el peatón y guardar el video resultante (video_out)
