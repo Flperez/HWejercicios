@@ -38,11 +38,49 @@ Pasos a seguir:
 
 
 ## Ejercicio 3
+### Uso de matplotlib
 
 
-## Ejercicio 4
+- Objetivo: comparar resultados obtenidos por un algoritmo de reconocimiento 
+de objetos 3D
+ - por cada objeto reconocido se conoce: area2D, area3D, complejidad (número entero)
+    - se desea analizar cada característica por separado 
+        - generar una gráfica por cada una de ellas
+    
+- Dos ficheros:
+    - detection.csv, groundtruth.csv
+- Pasos a seguir:
+1. Leer ficheros csv y cargar datos en 2 numpy arrrays (
+numpy.loadtxt)
+2. Generar una gráfica de barras para el area2D
+- cada barra muestra % de objetos cuya area2D difere del original en un rango establecido
+        - matplotlib.pyplot.bar
+- de forma adicional, la gráfica debe mostrar el % de objetos para el que no se calculo area
+
+    - fallo en el cálculo se marca con carácter - en el fichero
+3. Generar gráfica equivalente para area3D
+4. Generar una tercera gráfica donde se muestren las diferencias a nivel de complejidad
+5. Salvar las gráficas en disco en formato png
+
+- Uso de funciones recomendadas
+    - np.count_nonzero, np.isnan, np.su
+
+   
+    
+
+#Ejercicio 4
+## Uso del notebook de Jupyter
+- Convertir el Codelab de Matplotlib en un notebook
+
 
 ## Ejercicio 5
+### Detector de caras y ojos
+- Detectar caras y ojos en los actores de una película
+- Utilizar clasificadores cascada (2001) previamente entrenados
+    - el módulo de OpenCV de detección de objetos permite trabajar con estos clasificadores
+
+
+## Ejercicio 6
 ### Detector de peatones:
 1. Debemos cargar un video de entrada (video_in)
 2. Obtener los frames
