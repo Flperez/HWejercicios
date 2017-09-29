@@ -68,8 +68,8 @@ numpy.loadtxt)
    
     
 
-#Ejercicio 4
-## Uso del notebook de Jupyter
+## Ejercicio 4
+### Uso del notebook de Jupyter
 - Convertir el Codelab de Matplotlib en un notebook
 
 
