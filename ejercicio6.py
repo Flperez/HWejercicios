@@ -10,6 +10,8 @@ ap.add_argument("-i","--images",required = False,
 ap.add_argument("-o","--out",required = False,
                 help = "ruta al archivo de video resultante")
 
+ap.add_argument("-o","--out",required = False,
+                help = "ruta al archivo de video resultante")
 args = vars(ap.parse_args())
 path_in = args['images']
 path_out = args['out']

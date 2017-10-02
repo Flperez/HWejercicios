@@ -17,9 +17,6 @@ path_cascade_face = '/usr/local/share/OpenCV/haarcascades/haarcascade_frontalcat
 path_cascade_eyes = '/usr/local/share/OpenCV/haarcascades/haarcascade_eye.xml'
 
 
-
-
-
 faceCascade = cv2.CascadeClassifier(path_cascade_face)
 eyesCascade = cv2.CascadeClassifier(path_cascade_eyes)
 
@@ -27,7 +24,7 @@ eyesCascade = cv2.CascadeClassifier(path_cascade_eyes)
 #cargamos video de entrada
 cap = cv2.VideoCapture(path_in)
 #video de salida
-fourcc = cv2.VideoWriter_fourcc('X’, ‘V’, ‘I’,’D')
+fourcc = cv2.VideoWriter_fourcc('X', 'V', 'I','D')
 out = cv2.VideoWriter(path_out,fourcc, 33.0, (640,480))
 
 while(cap.isOpened()):

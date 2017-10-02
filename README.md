@@ -30,7 +30,7 @@ Pasos a seguir:
 1. Leer una imagen de una secuencia (pillow)
 2. Convertir de RGB a formato HSV (pillow)
 3. Dado el rango de color de nuestro objeto, umbralizar el fotograma (numpy arrays)
--  29<H>88, 43<S<255, 126<V<255
+-  29<H<88, 43<S<255, 126<V<255
 4. Presentar regiones candidatas a objeto en la imagen (pillow)
 -  blend imagen original y umbralización
 5. Salvar blend en un directorio de salida (os)
