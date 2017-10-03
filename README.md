@@ -82,7 +82,22 @@ numpy.loadtxt)
 
 ## Ejercicio 6
 ### Detector de peatones:
-1. Debemos cargar un video de entrada (video_in)
+1. Debemos cargar un video de enProcesando:  59.8 %
+trada (video_in)
 2. Obtener los frames
 3. Aplicar el detector de peatones de HOG
 4. Pintar con un rectángulo el peatón y guardar el video resultante (video_out)
+
+
+## Ejercicio 7
+### Continuación del ejercicio 2
+
+- Tras la segmentación
+1. Eliminar pequeños focos de ruido
+    -  Aplicar dos operaciones de erosión consecutivas
+        - elemento estructurante cuadrado 3x3
+    - Aplicar dos operaciones de dilatación consecutivas
+        - elemento estructurante cuadrado 3x3
+2.  Detectar distintos contornos que aparecen en la imagen (cv2.findContours )
+- Quedarse con el de mayor área
+3. Presentar resultado del seguimiento en pantalla
