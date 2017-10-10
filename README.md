@@ -101,3 +101,26 @@ trada (video_in)
 2.  Detectar distintos contornos que aparecen en la imagen (cv2.findContours )
 - Quedarse con el de mayor área
 3. Presentar resultado del seguimiento en pantalla
+
+## Ejercicio 7 = mediamatcher.py
+### Descriptores 2d
+
+Estamos interesados en identificar imágenes. Para ello vamos a trabajar en un enfoque basado en la detección y matching de puntos característicos. Por suerte, OpenCV presenta un módulo que implementa diferentes descriptores (SURF, SIFT, ORB, etc...) que simplifican la identificación de puntos característicos en imagen. Para comenzar a familiarizarnos con estos puntos característicos lo primero que haremos será seguir el tutorial que se nos proporciona desde la documentación de OpenCV.En él se detallan los pasos a seguir para identificar puntos homólogos en dos imágenes distintas.
+Una vez tengamos el código del tutorial funcionando lo vamos a utilizar para identificar imágenes similares. Para ello nos crearemos un conjunto de fotos (podemos hacerlas con el móvil o descargarlas de internet) de carátulas de libros, cds, dvds...(lo que el alumno considere).A partir de aquí el alumno desarrollará una función en Python que reciba dos argumentos:
+
+- Ruta donde se encuentra la imagen a emparejar
+- Colección de imágenes
+    - mediamatcher.py –query=./cover_The_Hobbit –covers=./my_media_database/
+
+La función deberá mostrar en una ventana la imagen con la queda emparejada la imagen de consulta. De todas las imágenes se seleccionará aquella que obtenga mayor número de ​matches (o puntos emparejados). Fijaremos un umbral de un mínimo de N puntos emparejados. Si varias imágenes superan dicho umbral, se mostrará aquella que presente mayor número de matches.
+​
+candidata
+## Ejercicio 8
+### Reconocimiento de texto
+
+Aplicar el módulo de detección y reconocimiento de texto (text) de OpenCV al problema de identificación de matrículas
+- El programa puede recibir como entrada una imagen o un vídeo, mostrando el resultado de la detección/reconocimiento en una ventana
+- En su versión más simple, el programa debería responder a la siguiente interfaz:
+
+    - python text_recognition.py --image=./media/car.png
+    - python text_recognition.py --video=./media/car.avi
