@@ -110,6 +110,8 @@ if __name__ == "__main__":
 
             if path_out:
                 out.write(frame)
+        else:
+            break
 
 
     print("fin")
