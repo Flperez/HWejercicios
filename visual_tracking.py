@@ -57,6 +57,7 @@ if __name__ == "__main__":
     while (cap.isOpened()):
         ret, frame = cap.read()
         if ret == True:
+            frame = cv2.GaussianBlur(frame,(5,5),0)
             hsv = cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
             mask = cv2.inRange(hsv,bajos,altos)
 
@@ -102,12 +103,22 @@ if __name__ == "__main__":
 
             cv2.imshow("mask", r2)
             cv2.imshow("image", r1)
+
             cv2.waitKey(33)
+
+
 
             if path_out:
                 out.write(frame)
 
+
+    print("fin")
+    cap.release()
+    if path_out:
+        out.release()
     cv2.destroyAllWindows()
+
+
 
 
 
