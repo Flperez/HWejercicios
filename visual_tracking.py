@@ -80,7 +80,6 @@ if __name__ == "__main__":
             radius = int(radius)
             center =(int(x),int(y))
             cv2.circle(frame, center, radius, (0, 0, 255), 2)
-            cv2.circle(frame, center, 2, (0, 255, 0), 15)
 
 
             # pintar trayectoria
@@ -96,6 +95,9 @@ if __name__ == "__main__":
             if num_lineas>=2:
                 for k in range(0,num_lineas-1):
                     cv2.line(frame,(colax[k],colay[k]),(colax[k+1],colay[k+1]),(255,0,0),num_lineas-k)
+
+            #centroide
+            cv2.circle(frame, center, 2, (0, 255, 0), 15)
 
             #for para pintar
             r1 = cv2.resize(frame, (0, 0), fx=0.5, fy=0.5)
