@@ -17,7 +17,6 @@ if __name__=="__main__":
 
     cv2.namedWindow("tracking")
     camera = cv2.VideoCapture(path_video)
-    # camera = cv2.VideoCapture(0) webcam
 
     ok, image=camera.read()
     if not ok:
