@@ -23,8 +23,7 @@ args = vars(ap.parse_args())
 path_in = args['images']
 path_out = args['output']
 
-# video de salida
-fourcc = cv2.VideoWriter_fourcc('X', 'V', 'I', 'D')
+
 
 if __name__=="__main__":
 
@@ -46,24 +45,32 @@ if __name__=="__main__":
 
 
     else: #queremos grabar con la cam
-        out = cv2.VideoWriter(path_out, fourcc, 33.0, (640,480))
 
+        # video de salida
+        fourcc = cv2.VideoWriter_fourcc('X', 'V', 'I', 'D')
+        out = cv2.VideoWriter(path_out, fourcc, 33.0, (640,480))
+        key = '0'
         mode = 'visualization'
         cap = cv2.VideoCapture(0)
         while (cap.isOpened()):
-            ret, frame = cap.read()
-            if ret == True:
-                frame = cv2.flip(frame, 0)
-                cv2.imshow('frame', frame)
-                if cv2.waitKey(1) & 0xFF == ord('q'):
-                    break
+            _, frame = cap.read()
+            cv2.imshow('frame', frame)
+            key = cv2.waitKey(1)
 
-                if cv2.waitKey(1) & 0xFF == ord('s'):
-                    mode = 'save'
 
-                if mode == 'save':
-                    out.write(frame)
+            if key == 113: #letra q
+                mode = "exit"
+                break
 
+            if key == ord('s'):
+                mode = 'save'
+
+            if mode == 'save':
+                out.write(frame)
+                print("Guardando, presiona 'q' para terminar")
+
+
+        print("Video guardado en: ",path_out)
         cap.release()
         out.release()
         cv2.destroyAllWindows()
