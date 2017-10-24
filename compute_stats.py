@@ -40,7 +40,6 @@ path_groundtruth = args['groundtruth']
 path_out = args['output_graphs']
 
 
-
 if __name__ == "__main__":
 
     groundtruth = np.genfromtxt(fname=path_groundtruth, delimiter=',', skip_header=1, missing_values='-')
