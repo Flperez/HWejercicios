@@ -30,13 +30,14 @@ def textrecognition(img,pathname):
         regions = cv2.text.detectRegions(channel, er1, er2)
 
         rects = cv2.text.erGrouping(img, channel, [r.tolist() for r in regions])
-        # rects = cv2.text.erGrouping(img,channel,[x.tolist() for x in regions], cv2.text.ERGROUPING_ORIENTATION_ANY,'../../GSoC2014/opencv_contrib/modules/text/samples/trained_classifier_erGrouping.xml',0.5)
+        #rects = cv2.text.erGrouping(img,channel,[x.tolist() for x in regions], cv2.text.ERGROUPING_ORIENTATION_ANY,'/home/f/opencv_contrib-3.3.0/modules/text/samples/trained_classifier_erGrouping.xml',0.5)
 
         # Visualization
         for r in range(0, np.shape(rects)[0]):
             rect = rects[r]
             cv2.rectangle(vis, (rect[0], rect[1]), (rect[0] + rect[2], rect[1] + rect[3]), (0, 0, 0), 2)
             cv2.rectangle(vis, (rect[0], rect[1]), (rect[0] + rect[2], rect[1] + rect[3]), (255, 255, 255), 1)
+
 
     return vis
 
@@ -50,32 +51,38 @@ path_image = args['image']
 path_video= args['video']
 
 
-pathname = "/home/f/opencv_contrib-3.3.0/modules/text/samples"
 
+pathname = "/home/f/opencv_contrib-3.3.0/modules/text/samples"
+vocabulary = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
 if __name__=="__main__":
+    ocr = cv2.text.loadOCRHMMClassifierCNN(pathname+"/OCRBeamSearch_CNN_model_data.xml.gz")
 
-    if path_video and not path_image: #No se ha introducido una imagen
+
+
+
+
+
+
+    if path_video and not path_image: #Se ha introducido un video y no una imagen
         # cargamos video de entrada
         cap = cv2.VideoCapture(path_video)
         while (cap.isOpened()):
             ret, frame = cap.read()
             if ret == True:
-                frame = cv2.flip(frame, 0)
                 vis = textrecognition(img=frame,pathname=pathname)
                 cv2.imshow("Text detection result", vis)
-                cv2.imshow("Original image", frame)
                 cv2.waitKey(33)
 
 
 
-    if path_image and not path_video:
+    if path_image and not path_video: #Se ha introducido una imagen y no un video
         img = cv2.imread(path_image)
+
         vis = img.copy()
         vis = textrecognition(img=img,pathname=pathname)
         # Visualization
         cv2.imshow("Text detection result", vis)
-        cv2.imshow("Original image",img)
         cv2.waitKey()
 
     if path_image and path_video:

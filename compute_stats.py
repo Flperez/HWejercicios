@@ -19,16 +19,12 @@ def calcula_graph(result, indice, rango):
     #Una vez ordenados se cuentan el numero de veces repetido
     num = np.array([np.count_nonzero(binplace==i) for i in range(0,len(rango)+1)])
 
-    #Se ordena dado que NaN queda ordenado como un elemento con mayor de 250
+    #Se ordena dado que NaN queda ordenado como un elemento del ultimo de la lista de rangos
     num[0] = error
     num[len(rango)] -= error
 
     #Expresamos el vector en tanto por ciento
     num = (1 / len(result)) * 100 * num
-
-
-
-
     return num
 
 ap = argparse.ArgumentParser()
@@ -44,11 +40,11 @@ path_groundtruth = args['groundtruth']
 path_out = args['output_graphs']
 
 
-groundtruth = np.genfromtxt(fname=path_groundtruth,delimiter=',',skip_header=1,missing_values='-')
-detection = np.genfromtxt(fname=path_detection,delimiter=',',skip_header=1,missing_values='-')
-
 
 if __name__ == "__main__":
+
+    groundtruth = np.genfromtxt(fname=path_groundtruth, delimiter=',', skip_header=1, missing_values='-')
+    detection = np.genfromtxt(fname=path_detection, delimiter=',', skip_header=1, missing_values='-')
 
     result = abs(groundtruth-detection)
 
