@@ -11,14 +11,13 @@ num=5
 
 
 
-
 #paso de argumentos
 ap = argparse.ArgumentParser()
 ap.add_argument("-v","--video",required = True,
                 help = "ruta al video de entrada")
-ap.add_argument("-m","--min_values",nargs='+', type=int,required = True,
+ap.add_argument("--min_values",nargs='+', type=int,required = True,
                 help = "Valores minimos para la mascara en escala HSV")
-ap.add_argument("-M","--max_values",nargs='+', type=int,required = True,
+ap.add_argument("--max_values",nargs='+', type=int,required = True,
                 help = "Valores maximos para la mascara en escala HSV")
 ap.add_argument("-o","--output",required = False,
                 help = "ruta al video resultante")

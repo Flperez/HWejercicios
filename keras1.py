@@ -56,7 +56,6 @@ print('Test accuracy:', score[1])
 
 # Inference (predict): testing the trained model over some images (test set)
 
-#TODO: place your code here
 
 #visualizamos una imagen al azar
 j = randint(0,10000)

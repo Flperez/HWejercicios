@@ -58,11 +58,13 @@ def nueva_img(img):
     return new
 
 
+
+
 # paso de argumentos
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--input_dataset", required=True,
                 help="ruta a la carpeta de la secuencia de imagenes")
-ap.add_argument("-f", "--factor",required=False,
+ap.add_argument("--factor",required=False,
                 help="factor de aumento de datos ")
 ap.add_argument("-o", "--output_dataset", required=True,
                 help="ruta a la carpeta con el aumentado de datos")
@@ -71,7 +73,7 @@ ap.add_argument("-o", "--output_dataset", required=True,
 args = vars(ap.parse_args())
 path_in = args['input_dataset']
 path_out = args['output_dataset']
-factor = 10 #args['factor']
+factor = int(args['factor'])
 
 
 

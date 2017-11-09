@@ -87,7 +87,7 @@ if __name__ == "__main__":
         plt.subplot(121)
         img = cv2.cvtColor(src=img, code=cv2.COLOR_BGR2RGB)
         plt.imshow(img)
-        plt.title("imagen original")
+        plt.title("imagen de consulta")
         plt.subplot(122)
         img2 = cv2.cvtColor(src=img2, code=cv2.COLOR_BGR2RGB)
         plt.imshow(img2)

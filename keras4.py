@@ -61,7 +61,6 @@ print('Test accuracy:', score[1])
 
 # Inference (predict): testing the trained Lenet-5 over some images (test set)
 
-#TODO: place your code here
 
 
 j = randint(0,10000)
