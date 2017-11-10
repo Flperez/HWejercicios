@@ -4,6 +4,15 @@ import numpy as np
 
 # Malisiewicz et al.
 def non_max_suppression_fast(boxes, overlapThresh):
+    '''
+        Código copiado de:
+        https://www.pyimagesearch.com/2014/11/17/non-maximum-suppression-object-detection-python
+        Se utilizara para refinar los rectangulos
+
+        :param boxes:
+        :param overlapThresh:
+        :return:
+        '''
     # if there are no boxes, return an empty list
     if len(boxes) == 0:
         return []
