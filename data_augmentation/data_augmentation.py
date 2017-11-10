@@ -60,6 +60,8 @@ def nueva_img(img):
 
 if __name__ == "__main__":
 
+    #TODO: ARGUMENTOS!!!
+
     # paso de argumentos
     ap = argparse.ArgumentParser()
     ap.add_argument("-i", "--input_dataset", required=True,
