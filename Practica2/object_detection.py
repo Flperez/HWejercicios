@@ -24,6 +24,10 @@ def load_image_into_numpy_array(image):
   return np.array(image.getdata()).reshape(
       (im_height, im_width, 3)).astype(np.uint8)
 
+def nueva_ruta(ruta_in, ruta_out):
+    k = ruta_in.rfind("/")
+    name = ruta_in[k + 1:]
+    return ruta_out + "/" + name
 
 def draw_object(image_path):
 
@@ -123,13 +127,15 @@ if __name__=="__main__":
 
             if path_folder:
                 for infile in sorted(glob.glob((path_folder + '/*jpg'))):
+                    file, ext = os.path.splitext(infile)
 
                     #detectamos el objeto en la imagen
                     image_np = draw_object(infile)
                     plt.figure(figsize=IMAGE_SIZE)
                     plt.imshow(image_np)
-
+                    ruta_save = nueva_ruta(infile,path_folder_detection)+".jpg"
                     #guardamos imagen
+                    plt.savefig(ruta_save)
 
 
             if path_image:
@@ -144,4 +150,3 @@ if __name__=="__main__":
 
 
     plt.show()
-    print("s")
